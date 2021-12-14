@@ -1,5 +1,4 @@
 from os import read
-import queue
 from collections import deque
 
 with open("AdventOfCode/Day 1 Inputs.txt" , 'r') as f:
