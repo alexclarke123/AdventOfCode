@@ -7,6 +7,7 @@ with open("AdventOfCode/Day 1 Inputs.txt" , 'r') as f:
 q1 = deque()
 q2 = 0
 
+
 countlines = 0
 countset = 0
 check = 0
