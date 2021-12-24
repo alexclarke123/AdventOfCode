@@ -23,52 +23,34 @@ currentwinningboard[0] = 100
 for selectedboard in boards:
 
     # check for bingo by rows
-    rows = []
-    col = []
     bingocalleachrow = 0
     bingocallallrows = 100
 
     for i in range(0,5): 
         for j in range(0, 5):
             k = int(selectedboard[j+(i*5)])
-            col.append(k)
             match = set1.index(k)
             bingocalleachrow = max(match, bingocalleachrow)
 
-        rows.append(col)
         bingocallallrows = min(bingocalleachrow , bingocallallrows)
         bingocalleachrow = 0
-        col = []
 
     # check for bingo by columns
-    rows = []
-    col = []
     bingocalleachcol = 0
     bingocallallcols = 100
 
     for i in range(0,5): 
         for j in range(0, 5):
             k = int(selectedboard[i+(j*5)])
-            col.append(k)
             match = set1.index(k)
             bingocalleachcol = max(match, bingocalleachcol)
-        rows.append(col)
         bingocallallcols = min(bingocalleachcol , bingocallallcols)
         bingocalleachcol = 0
-        col = []
-
-    # record whether columns or rows were better
-    RowOrCol = ""
-    if bingocallallcols < bingocallallrows:
-        RowOrCol = "column"
-    elif bingocallallcols > bingocallallrows:
-        RowOrCol = "row"
-    else: RowOrCol = "both"
 
     #save details of currently winning board
     if currentwinningboard[0] > min(bingocallallcols, bingocallallrows):
         currentwinningboard[0] = min(bingocallallcols, bingocallallrows) #position of winning number in full bingo list
-        currentwinningboard[1] = RowOrCol #was the winning line a row or column?
+        #currentwinningboard[1] = RowOrCol #was the winning line a row or column?
         currentwinningboard[2] = boards.index(selectedboard) #which number board is the current winner?
 
 
@@ -84,3 +66,13 @@ winningboardremaining = [ele for ele in winningboard if ele not in set1]
 
 finalnumber = sum(winningboardremaining) * set1[currentwinningboard[0]]
 print(finalnumber)
+
+
+#REDUNDANT CODE
+#   # record whether columns or rows were better
+#     RowOrCol = ""
+#     if bingocallallcols < bingocallallrows:
+#         RowOrCol = "column"
+#     elif bingocallallcols > bingocallallrows:
+#         RowOrCol = "row"
+#     else: RowOrCol = "both"
