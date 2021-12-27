@@ -2,8 +2,8 @@ import re
 from os import error, read
 from typing import Counter, final
 
-with open("AdventOfCode/Day 4 Inputs.txt" , 'r') as f:
-    lines = f.readlines()
+# with open("AdventOfCode/Day 4 Inputs.txt" , 'r') as f:
+#     lines = f.readlines()
 
 boards = open('AdventOfCode/Day 4 Inputs.txt').read()
 boards = [item.split() for item in boards.split('\n\n')]
