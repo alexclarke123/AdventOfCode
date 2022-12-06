@@ -1,0 +1,27 @@
+day 7
+
+task: match all horizontal positions of all crabs; in the most efficient manner possible
+
+each change in 1 step of 1 crab costs 1 fuel
+
+need to determine which horizontal position that is
+
+
+we have a list of numbers
+we want to update each number in the list to the same number, by addition or deduction
+the sum of all the respective additions and deductions will give us our total number
+we want to find the lowest total number possible
+
+ideas: 
+    simple but possibly the "long way round" is to loop through different potential positions
+    on each loop record the lower of the previous loop or the current loop, in terms of the total of
+    absolute substractions and additions
+
+idea2:
+    can we do a goal seek type loop where we triangulate to the right number?
+    e.g. try 1 then try 1000
+
+idea3: 
+    does using the Median number help here?
+
+    
